@@ -26,7 +26,7 @@ export const SinglePostPage = ({route,navigation}) => {
         <View style={Style.singlePostMain}>
             <View style={Style.singlePostTitleView}>
                 <Text style={Style.singlePostTitle}>{post.title}</Text>
-                <AuthorText user={post.user}/>
+                <AuthorText user={post.user} date={post.date}/>
             </View>
             <View style={Style.singlePostContentView}>
                 <Text style={Style.singlePostContent}> {post.content} </Text>

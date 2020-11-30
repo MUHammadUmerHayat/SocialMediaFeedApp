@@ -128,7 +128,9 @@ export const Style = StyleSheet.create({
     //author text style
     authorText:{
         fontSize:hp('1.75%'),
-        fontStyle:'italic',
-        marginTop:hp('.8%')
+        fontStyle:'italic'
+    },
+    authorTextView: {
+        marginTop:hp('1.5%')
     }
 })

@@ -1,6 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
 import {nanoid} from '@reduxjs/toolkit'
-
 const initialState = []
 
 const PostsSlice = createSlice({
@@ -13,11 +12,13 @@ const PostsSlice = createSlice({
             },
             prepare: (title,user,content) => {
                 const id = nanoid()
+                const date = new Date().toISOString()
                 return {
                     payload: {
                         id,
                         title,
                         user,
+                        date,
                         content
                     }   
                 }

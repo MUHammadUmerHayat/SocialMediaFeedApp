@@ -7,12 +7,11 @@ import {AuthorText} from '../../components/AuthorText'
 
 export const Posts = ({navigation}) => {
     const postSelector = useSelector(state => state.posts)  
-    
     //individual post
     const post = postSelector.map( post => (
           <View key={post.id} style={Style.postStyle}>
               <Text style={Style.title}>{post.title}</Text>
-              <AuthorText user={post.user}/>
+              <AuthorText user={post.user} date={post.date}/>
               <Text style={Style.content}>{post.content.substring(0,50)}</Text>
               <Pressable onPress={()=>{navigation.navigate('Single Post',{id:post.id})}}>
                   <Text style={Style.viewpost}>View Post</Text>    
