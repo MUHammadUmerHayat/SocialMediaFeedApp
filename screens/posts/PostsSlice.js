@@ -13,10 +13,18 @@ const PostsSlice = createSlice({
             prepare: (title,user,content) => {
                 const id = nanoid()
                 const date = new Date().toISOString()
+                const reactions = {
+                    'clap': 0,
+                    'excited': 0,
+                    'angry': 0,
+                    'celebration': 0,
+                    'funny': 0
+                }
                 return {
                     payload: {
                         id,
                         title,
+                        reactions,
                         user,
                         date,
                         content
@@ -31,9 +39,16 @@ const PostsSlice = createSlice({
                 post.title = title,
                 post.content = content
             }
+        },
+        updateReaction: (state,action) => {
+            const {id,name} = action.payload
+            post = state.find(post => post.id===id)
+            if(post){
+                post.reactions[name] += 1
+            }
         }
     }
 })
 
-export const {addPost,updatePost} = PostsSlice.actions
+export const {addPost,updatePost,updateReaction} = PostsSlice.actions
 export default PostsSlice.reducer

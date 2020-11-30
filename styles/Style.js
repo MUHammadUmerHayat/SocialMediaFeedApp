@@ -93,7 +93,8 @@ export const Style = StyleSheet.create({
         paddingBottom: hp('2%'),
         paddingRight:wp('1%'),
         paddingLeft:wp('1%'),
-        backgroundColor:'gray'
+        backgroundColor:'gray',
+        justifyContent:'center'
     },
     singlePostTitleView:{
         backgroundColor:'white',
@@ -107,7 +108,6 @@ export const Style = StyleSheet.create({
         fontSize: hp('3%')
     },
     singlePostContentView:{
-        flex:1,
         backgroundColor:'white',
         paddingTop:hp('1%'),
         paddingBottom:hp('1%'),
@@ -116,6 +116,11 @@ export const Style = StyleSheet.create({
     },
     singlePostContent:{
         fontSize:hp('2.2%')
+    },
+    singlePostReactionsView:{
+      marginTop:hp('2%'),
+      marginBottom:hp('1%'),
+      alignItems:'center'  
     },
     editPost:{
         alignItems:'flex-end',
@@ -132,5 +137,16 @@ export const Style = StyleSheet.create({
     },
     authorTextView: {
         marginTop:hp('1.5%')
+    },
+    //reaction component
+    emojiRow:{
+        flexDirection: 'row',
+        marginTop:hp('2%')
+    },
+    emoji:{
+        marginRight:wp('5%')
+    },
+    emojiSize:{
+        fontSize: hp('2%')
     }
 })

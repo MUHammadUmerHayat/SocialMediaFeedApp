@@ -9,18 +9,16 @@ export const EditPost = ({route,navigation}) => {
     const dispatch = useDispatch()
     const postSelector = useSelector(state=>state.posts )
     const post=postSelector.find(state=>state.id === id)
-    const [title,setTitle] = useState('')
-    const [content,setContent] = useState('')
+    const [title,setTitle] = useState(post.title)
+    const [content,setContent] = useState(post.content)
 
     const addUpdateFunction = () => {
-        if(title&&content){
             dispatch(updatePost({
                 id: post.id,
                 title,
                 content
             }))
-            navigation.navigate('Single Post')
-        }   
+            navigation.navigate('Single Post')   
     }
     return(
             <View style={Style.addPostMain}>

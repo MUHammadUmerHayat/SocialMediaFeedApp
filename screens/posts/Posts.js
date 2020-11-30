@@ -1,18 +1,22 @@
 import React from 'react'
-import {View,Text,Pressable} from 'react-native'
-import {AddPostButton} from '../../components/AddPostButton'
+import {View,Text,Pressable,ScrollView} from 'react-native'
 import {useSelector} from 'react-redux'
 import {Style} from '../../styles/Style'
-import {AuthorText} from '../../components/AuthorText'
 
+//components
+import {AddPostButton} from '../../components/AddPostButton'
+import {AuthorText} from '../../components/AuthorText'
+import { ReactionComponent } from '../../components/ReactionComponent'
 export const Posts = ({navigation}) => {
-    const postSelector = useSelector(state => state.posts)  
+    const postSelector = useSelector(state => state.posts)
+    const posts = postSelector.slice().sort((a,b)=>b.date.localeCompare(a.date))  
     //individual post
-    const post = postSelector.map( post => (
+    const post = posts.map( post => (
           <View key={post.id} style={Style.postStyle}>
               <Text style={Style.title}>{post.title}</Text>
               <AuthorText user={post.user} date={post.date}/>
               <Text style={Style.content}>{post.content.substring(0,50)}</Text>
+              <ReactionComponent post={post}/>
               <Pressable onPress={()=>{navigation.navigate('Single Post',{id:post.id})}}>
                   <Text style={Style.viewpost}>View Post</Text>    
               </Pressable>
@@ -27,11 +31,11 @@ export const Posts = ({navigation}) => {
     )
 
     return(
-        <View style={Style.mainStyle}>
+        <ScrollView style={Style.mainStyle}>
             <AddPostButton onpress={()=>{navigation.navigate('Add Post')}}/>
             <View style={Style.postsMain}>
                 { post[0] == null ? placeholder:post}
             </View>
-        </View>
+        </ScrollView>
     )
 }

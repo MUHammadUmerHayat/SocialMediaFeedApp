@@ -6,6 +6,7 @@ import {AuthorText} from '../../components/AuthorText'
 
 //single post component header
 import {HeaderButton} from '../../components/HeaderButton'
+import {ReactionComponent} from '../../components/ReactionComponent'
 
 export const SinglePostPage = ({route,navigation}) => {
     const {id} = route.params
@@ -30,6 +31,9 @@ export const SinglePostPage = ({route,navigation}) => {
             </View>
             <View style={Style.singlePostContentView}>
                 <Text style={Style.singlePostContent}> {post.content} </Text>
+                <View style={Style.singlePostReactionsView}>
+                    <ReactionComponent post={post}/>
+                </View>
             </View>
         </View>
     )
