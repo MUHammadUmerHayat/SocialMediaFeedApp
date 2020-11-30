@@ -19,12 +19,10 @@ export const Style = StyleSheet.create({
         elevation: 3,
         marginBottom: hp('1%'),
     },
-    postView: {
-        marginTop: hp('1%'),
-        marginBottom: hp('1%'),
-    },
     addPostView:{
-        alignSelf: 'flex-end'
+        alignSelf: 'flex-end',
+        marginBottom:hp('4%'),
+        marginTop:hp('2%')
     },
     title:{
         fontSize: hp('3%')
@@ -63,6 +61,74 @@ export const Style = StyleSheet.create({
         paddingTop: hp('1%'),
         paddingBottom: hp('1%'),
         alignItems:'center',
-        elevation: 5
+        elevation: 5,
+    },
+    //PostComponent.js
+    placeholder:{
+        flex:1,
+        justifyContent:'center',
+        alignItems:'center'
+    },
+    postsMain:{
+        paddingTop: hp('1%'),
+        paddingBottom: hp('1%'),
+        flex:1
+    },
+    noPosts:{
+        color:'white',
+        fontStyle:'italic',
+        fontSize:hp('3%'),
+        fontWeight: 'bold'
+    },
+    viewpost:{
+        alignSelf: 'flex-end',
+        fontWeight: 'bold',
+        fontStyle: 'italic',
+        fontSize: hp('2.2%')
+    },
+    //singlepostpage component
+    singlePostMain: {
+        flex:1,
+        paddingTop: hp('2%'),
+        paddingBottom: hp('2%'),
+        paddingRight:wp('1%'),
+        paddingLeft:wp('1%'),
+        backgroundColor:'gray'
+    },
+    singlePostTitleView:{
+        backgroundColor:'white',
+        paddingTop:hp('3%'),
+        paddingBottom:hp('3%'),
+        paddingRight:wp('2%'),
+        paddingLeft:wp('2%'),
+        marginBottom:hp('1%')
+    },
+    singlePostTitle:{
+        fontSize: hp('3%')
+    },
+    singlePostContentView:{
+        flex:1,
+        backgroundColor:'white',
+        paddingTop:hp('1%'),
+        paddingBottom:hp('1%'),
+        paddingRight:wp('2%'),
+        paddingLeft:wp('2%')
+    },
+    singlePostContent:{
+        fontSize:hp('2.2%')
+    },
+    editPost:{
+        alignItems:'flex-end',
+        backgroundColor:'white',
+        marginBottom:hp('1%'),
+        marginTop:hp('1%'),
+        paddingTop:hp('1%'),
+        paddingBottom:hp('1%'),
+    },
+    //author text style
+    authorText:{
+        fontSize:hp('1.75%'),
+        fontStyle:'italic',
+        marginTop:hp('.8%')
     }
 })

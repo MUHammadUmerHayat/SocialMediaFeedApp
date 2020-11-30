@@ -14,7 +14,7 @@ export const AddPostButton = (props) => {
                 borderWidth = {1}
                 onPress = {props.onpress}
             >
-                Add Post
+                Add New Post
             </Icon.Button>
         </View>
     )

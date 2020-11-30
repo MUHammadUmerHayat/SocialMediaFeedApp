@@ -2,19 +2,22 @@ import React,{useState} from 'react'
 import {View,TextInput,Pressable,Text} from 'react-native'
 import {Style} from '../../styles/Style'
 import { useDispatch } from 'react-redux'
-import { nanoid } from '@reduxjs/toolkit'
 import {addPost} from './PostsSlice'
+
+//components
+import {AuthorDropDown} from '../../components/AuthorDropDown'
 
 export const AddPost = ({navigation}) => {
     const [title,setTitle] = useState('')
     const [content,setContent] = useState('')
+    const [user,setUser] = useState('')
     const dispatch = useDispatch()
     const addPostFunction = () => {
-        dispatch(addPost({
-            id: nanoid(),
-            title: title,
-            content: content
-        }))
+        dispatch(addPost(
+            title,
+            user,
+            content
+        ))
         navigation.navigate('Posts')
     }
     return(
@@ -30,6 +33,11 @@ export const AddPost = ({navigation}) => {
                 placeholder="content"
                 style={Style.addContent}
                 onChangeText={(item)=>{setContent(item)}}
+            />
+            <TextInput 
+                placeholder="author" 
+                style={Style.addTitle}
+                onChangeText={(item)=>{setUser(item)}}
             />
             <Pressable onPress={()=>{addPostFunction()}}>
                 <View style={Style.addPostButton}>
