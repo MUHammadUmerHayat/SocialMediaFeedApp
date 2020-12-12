@@ -15,7 +15,7 @@ export const Posts = ({navigation}) => {
           <View key={post.id} style={Style.postStyle}>
               <Text style={Style.title}>{post.title}</Text>
               <AuthorText user={post.user} date={post.date}/>
-              <Text style={Style.content}>{post.content.substring(0,50)}</Text>
+              <Text style={Style.content}>{post.content.substring(0,50)}...</Text>
               <ReactionComponent post={post}/>
               <Pressable onPress={()=>{navigation.navigate('Single Post',{id:post.id})}}>
                   <Text style={Style.viewpost}>View Post</Text>    
@@ -31,11 +31,11 @@ export const Posts = ({navigation}) => {
     )
 
     return(
-        <ScrollView style={Style.mainStyle}>
+        <View style={Style.mainStyle}>
             <AddPostButton onpress={()=>{navigation.navigate('Add Post')}}/>
-            <View style={Style.postsMain}>
+            <ScrollView style={Style.postsMain}>
                 { post[0] == null ? placeholder:post}
-            </View>
-        </ScrollView>
+            </ScrollView>
+        </View>
     )
 }

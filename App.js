@@ -17,12 +17,17 @@ export default App = () => {
     <Provider store={Store}>
       <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen name='Posts' component={Posts}/>
+          <Stack.Screen 
+            name='Posts' 
+            component={Posts}
+            options={{headerTitle:'Social Media Feed App'}}
+          />
           <Stack.Screen name='Add Post' component={AddPost}/>
           <Stack.Screen name='Edit Post' component={EditPost}/>
           <Stack.Screen 
             name='Single Post' 
             component={SinglePostPage}
+            options={{headerTitle:'View Post'}}
           />
         </Stack.Navigator>
       </NavigationContainer>

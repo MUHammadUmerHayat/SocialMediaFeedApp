@@ -3,11 +3,15 @@ import {View,TextInput,Pressable,Text} from 'react-native'
 import {Style} from '../../styles/Style'
 import { useDispatch } from 'react-redux'
 import {addPost} from './PostsSlice'
-
 //components
-import {AuthorDropDown} from '../../components/AuthorDropDown'
+import { DropDown } from '../../components/DropDown'
+//redux
+import { useSelector } from 'react-redux'
+  
 
 export const AddPost = ({navigation}) => {
+    //author selector
+    const authorList = useSelector( state => state.users )
     const [title,setTitle] = useState('')
     const [content,setContent] = useState('')
     const [user,setUser] = useState('')
@@ -34,10 +38,12 @@ export const AddPost = ({navigation}) => {
                 style={Style.addContent}
                 onChangeText={(item)=>{setContent(item)}}
             />
-            <TextInput 
-                placeholder="author" 
-                style={Style.addTitle}
-                onChangeText={(item)=>{setUser(item)}}
+            <DropDown 
+                items = { authorList }
+                defaultValue = 'choose user' 
+                headerText = 'Choose Author'
+                onItemChange = { item => setUser(item) }
+                headerTextColor = 'black'
             />
             <Pressable onPress={()=>{addPostFunction()}}>
                 <View style={Style.addPostButton}>

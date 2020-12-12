@@ -8,7 +8,8 @@ export const Style = StyleSheet.create({
         paddingLeft: wp('1%'),
         paddingTop: hp('1%'),
         paddingBottom: hp('1%'),
-        backgroundColor:'gray'
+        backgroundColor:'gray',
+        
     },
     postStyle: {
         backgroundColor: 'white',
@@ -21,7 +22,7 @@ export const Style = StyleSheet.create({
     },
     addPostView:{
         alignSelf: 'flex-end',
-        marginBottom:hp('4%'),
+        marginBottom:hp('1%'),
         marginTop:hp('2%')
     },
     title:{
@@ -34,7 +35,9 @@ export const Style = StyleSheet.create({
         flex:1,
         alignItems:'center',
         justifyContent: 'center',
-        backgroundColor:'gray'
+        backgroundColor:'gray',
+        paddingRight: wp('2%'),
+        paddingLeft: wp('3%')
     },
     addTitle: {
         backgroundColor:'white',
@@ -60,6 +63,7 @@ export const Style = StyleSheet.create({
         paddingLeft: wp('4%'),
         paddingTop: hp('1%'),
         paddingBottom: hp('1%'),
+        marginTop: hp('1%'),
         alignItems:'center',
         elevation: 5,
     },
@@ -72,7 +76,7 @@ export const Style = StyleSheet.create({
     postsMain:{
         paddingTop: hp('1%'),
         paddingBottom: hp('1%'),
-        flex:1
+        flex:1,
     },
     noPosts:{
         color:'white',
@@ -148,5 +152,72 @@ export const Style = StyleSheet.create({
     },
     emojiSize:{
         fontSize: hp('2%')
-    }
+    },
+    //drop down list
+    main:{
+        alignItems: 'center',
+        flexDirection: 'column',
+    },
+    text:{
+        color:'white',
+        fontWeight:'bold'
+    },
+    modal:{
+        backgroundColor:'rgba(255, 255, 255, .4)',
+        justifyContent:'center',
+        alignItems:'center',
+        padding:20,
+        flex: 1,
+        marginTop: hp('7%')
+    },
+    bloodgroup:{
+        flexDirection:'row',
+        paddingRight:10,
+        paddingLeft:10,
+        backgroundColor:'white',
+        paddingBottom: hp('1%'),
+        paddingTop: hp('1%')
+    },
+    dropTextView:{
+        flex:1,
+        alignSelf:'center',
+    },
+    bloodGroupImage:{
+        flexDirection:'row-reverse',
+        paddingRight:10,
+        paddingLeft:10,  
+    },
+    dropDownSelectorText:{
+        fontSize: hp('1.8%'),
+    },
+    dropDownText:{
+        fontSize:20,
+        padding:15
+    },
+    dropDownHeaderText:{
+        fontWeight:'bold',
+        fontSize:25,
+        paddingTop:20,
+        paddingLeft: wp('3%')
+    },
+    line:{
+        backgroundColor:'gray',
+        height:'1%',
+        borderRadius:10,
+        top:'1%'
+    },
+    underLine:{
+        backgroundColor:'#B81524',
+        height:hp('.2%')
+    },
+    dropDownView:{
+        width: wp('70%'),
+        marginBottom: hp('2%'),
+        marginTop: hp('2%'),
+        backgroundColor: 'white',
+    },
+    dropDownItem:{
+        height:hp('8%'),
+        paddingLeft: wp('3%')
+    },
 })
